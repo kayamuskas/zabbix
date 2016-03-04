@@ -1,0 +1,21 @@
+# Extra rules for postgres
+#
+CREATE USER zabbix;
+GRANT CONNECT ON DATABASE foo_db to zabbix;
+\c foo_db
+GRANT USAGE ON SCHEMA public to zabbix;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO zabbix;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO zabbix;
+
+#
+# For PostgreSQL buffers info
+# apt-get install postgresql-bdr-contrib-9.4
+# add to pg_hba.conf
+ host    foo_db           zabbix          127.0.0.1/32              trust
+
+postgres=# CREATE EXTENSION pg_buffercache;
+postgres=# \dx pg_buffercache
+postgres=# GRANT EXECUTE ON FUNCTION public.pg_buffercache_pages() to zabbix;
+
+check it:
+$zabbix_agentd -t pgsql.buffercache.total['-h 127.0.0.1 -p 5445 -U zabbix -d foo_db']
