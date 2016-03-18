@@ -19,3 +19,30 @@ postgres=# GRANT EXECUTE ON FUNCTION public.pg_buffercache_pages() to zabbix;
 
 check it:
 $zabbix_agentd -t pgsql.buffercache.total['-h 127.0.0.1 -p 5445 -U zabbix -d foo_db']
+
+# For pg_stat_statements
+shared_preload_libraries = 'pg_stat_statements'
+pg_stat_statements.max = 10000
+pg_stat_statements.track = all
+
+postgres=# CREATE EXTENSION pg_stat_statements;
+
+# For WAL count
+apt-get install postgresql-bdr-plperl-9.4
+
+\c foo_db
+postgres=# CREATE LANGUAGE plperlu;
+postgres=# SELECT* FROM pg_language;
+
+CREATE FUNCTION nosecurity_ls(text) RETURNS setof text AS $$
+  opendir(my $d, $_[0]) or die $!;
+    while (my $f=readdir($d)) {
+        return_next($f);
+          }
+            return undef; 
+            $$ language plperlu;
+
+change func in zabbix_agentd.conf.d/postgresql.conf
+#UserParameter=pgsql.wal.count[*],psql -qAtX $1 -c "select count(*) from pg_ls_dir('pg_xlog')"
+UserParameter=pgsql.wal.count[*],psql -qAtX $1 -c "select count(*) from nosecurity_ls('pg_xlog')"
+
