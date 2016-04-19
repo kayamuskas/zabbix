@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>2.0</version>
-    <date>2015-01-20T05:57:41Z</date>
+    <version>3.0</version>
+    <date>2016-03-21T12:09:31Z</date>
     <groups>
         <group>
-            <name>-=Dark_Sarmat templates=-</name>
+            <name>Templates</name>
         </group>
     </groups>
     <templates>
         <template>
-            <template>Template SNMP Mikrotik v. 1.0</template>
-            <name>Template SNMP Mikrotik v. 1.0</name>
+            <template>Template SNMP Mikrotik - fast</template>
+            <name>Template SNMP Mikrotik - fast</name>
+            <description/>
             <groups>
                 <group>
-                    <name>-=Dark_Sarmat templates=-</name>
+                    <name>Templates</name>
                 </group>
             </groups>
             <applications>
@@ -44,7 +45,7 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>.1.3.6.1.2.1.25.3.3.1.2.1</snmp_oid>
                     <key>mikrotik.cpu.load</key>
-                    <delay>5</delay>
+                    <delay>30</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
@@ -52,9 +53,12 @@
                     <allowed_hosts/>
                     <units/>
                     <delta>0</delta>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
@@ -75,45 +79,7 @@
                         </application>
                     </applications>
                     <valuemap/>
-                </item>
-                <item>
-                    <name>Device model</name>
-                    <type>4</type>
-                    <snmp_community>{$COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.2.1.4.20.1.1</snmp_oid>
-                    <key>mikrotik.model</key>
-                    <delay>3600</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Модель устройства</description>
-                    <inventory_link>15</inventory_link>
-                    <applications>
-                        <application>
-                            <name>General</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>License Level</name>
@@ -122,7 +88,7 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>.1.3.6.1.4.1.14988.1.1.4.3.0</snmp_oid>
                     <key>mikrotik.license.level</key>
-                    <delay>3600</delay>
+                    <delay>10800</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
@@ -130,9 +96,12 @@
                     <allowed_hosts/>
                     <units/>
                     <delta>0</delta>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
@@ -153,25 +122,29 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
-                    <name>Software ID</name>
+                    <name>Device model</name>
                     <type>4</type>
                     <snmp_community>{$COMMUNITY}</snmp_community>
                     <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.14988.1.1.4.1.0</snmp_oid>
-                    <key>mikrotik.software.id</key>
-                    <delay>3600</delay>
+                    <snmp_oid>.1.3.6.1.2.1.4.20.1.1</snmp_oid>
+                    <key>mikrotik.model</key>
+                    <delay>10800</delay>
                     <history>7</history>
-                    <trends>365</trends>
+                    <trends>0</trends>
                     <status>0</status>
                     <value_type>4</value_type>
                     <allowed_hosts/>
                     <units/>
                     <delta>0</delta>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
@@ -184,209 +157,15 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>Программный идентификатор</description>
-                    <inventory_link>0</inventory_link>
+                    <description>Модель устройства</description>
+                    <inventory_link>15</inventory_link>
                     <applications>
                         <application>
-                            <name>License</name>
+                            <name>General</name>
                         </application>
                     </applications>
                     <valuemap/>
-                </item>
-                <item>
-                    <name>System name</name>
-                    <type>4</type>
-                    <snmp_community>{$COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.2.1.1.5.0</snmp_oid>
-                    <key>mikrotik.system.name</key>
-                    <delay>3600</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>3</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Status</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
-                <item>
-                    <name>Temperature</name>
-                    <type>4</type>
-                    <snmp_community>{$COMMUNITY}</snmp_community>
-                    <multiplier>1</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.14988.1.1.3.10.0</snmp_oid>
-                    <key>mikrotik.system.temperature</key>
-                    <delay>10</delay>
-                    <history>7</history>
-                    <trends>90</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>0.1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Определение температуры устройства</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Health</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
-                <item>
-                    <name>Total memory</name>
-                    <type>4</type>
-                    <snmp_community>{$COMMUNITY}</snmp_community>
-                    <multiplier>1</multiplier>
-                    <snmp_oid>.1.3.6.1.2.1.25.2.3.1.5.65536</snmp_oid>
-                    <key>mikrotik.system.memory</key>
-                    <delay>3600</delay>
-                    <history>7</history>
-                    <trends>90</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1024</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Общий объем оперативной памяти устройства</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Memory</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
-                <item>
-                    <name>Uptime</name>
-                    <type>4</type>
-                    <snmp_community>{$COMMUNITY}</snmp_community>
-                    <multiplier>1</multiplier>
-                    <snmp_oid>.1.3.6.1.2.1.1.3.0</snmp_oid>
-                    <key>mikrotik.system.uptime</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>90</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>uptime</units>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>0.01</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Длительность работы устройства с момента включения или перезагрузки</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Status</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
-                <item>
-                    <name>Used memory</name>
-                    <type>4</type>
-                    <snmp_community>{$COMMUNITY}</snmp_community>
-                    <multiplier>1</multiplier>
-                    <snmp_oid>.1.3.6.1.2.1.25.2.3.1.6.65536</snmp_oid>
-                    <key>mikrotik.used.memory</key>
-                    <delay>30</delay>
-                    <history>7</history>
-                    <trends>90</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1024</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Количество используемой оперативной памяти</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Memory</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Voltage</name>
@@ -395,7 +174,7 @@
                     <multiplier>1</multiplier>
                     <snmp_oid>.1.3.6.1.4.1.14988.1.1.3.8.0</snmp_oid>
                     <key>mikrotik.power</key>
-                    <delay>3600</delay>
+                    <delay>60</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
@@ -403,9 +182,12 @@
                     <allowed_hosts/>
                     <units/>
                     <delta>0</delta>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <formula>0.1</formula>
                     <delay_flex/>
@@ -426,6 +208,394 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>CPU Temperature</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>1</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.14988.1.1.3.11.0</snmp_oid>
+                    <key>mikrotik.processor.temperature</key>
+                    <delay>30</delay>
+                    <history>7</history>
+                    <trends>90</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>0.1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Определение температуры CPU</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Health</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Software ID</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.14988.1.1.4.1.0</snmp_oid>
+                    <key>mikrotik.software.id</key>
+                    <delay>10800</delay>
+                    <history>7</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Программный идентификатор</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>License</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Total memory</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>1</multiplier>
+                    <snmp_oid>.1.3.6.1.2.1.25.2.3.1.5.65536</snmp_oid>
+                    <key>mikrotik.system.memory</key>
+                    <delay>10800</delay>
+                    <history>7</history>
+                    <trends>90</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1024</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Общий объем оперативной памяти устройства</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>System name</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.2.1.1.5.0</snmp_oid>
+                    <key>mikrotik.system.name</key>
+                    <delay>10800</delay>
+                    <history>7</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>3</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Status</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Temperature</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>1</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.14988.1.1.3.10.0</snmp_oid>
+                    <key>mikrotik.system.temperature</key>
+                    <delay>30</delay>
+                    <history>7</history>
+                    <trends>90</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>0.1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Определение температуры устройства</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Health</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Uptime</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>1</multiplier>
+                    <snmp_oid>.1.3.6.1.2.1.1.3.0</snmp_oid>
+                    <key>mikrotik.system.uptime</key>
+                    <delay>60</delay>
+                    <history>7</history>
+                    <trends>90</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>uptime</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>0.01</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Длительность работы устройства с момента включения или перезагрузки</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Status</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Used memory</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>1</multiplier>
+                    <snmp_oid>.1.3.6.1.2.1.25.2.3.1.6.65536</snmp_oid>
+                    <key>mikrotik.used.memory</key>
+                    <delay>30</delay>
+                    <history>7</history>
+                    <trends>90</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1024</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Количество используемой оперативной памяти</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Traffic WAN In</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.2.1.31.1.1.1.6.2</snmp_oid>
+                    <key>mikrotik.wan.bytes-in</key>
+                    <delay>30</delay>
+                    <history>7</history>
+                    <trends>90</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>bytes</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Traffic</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Traffic WAN Out</name>
+                    <type>4</type>
+                    <snmp_community>{$COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.2.1.31.1.1.1.10.2</snmp_oid>
+                    <key>mikrotik.wan.bytes-out</key>
+                    <delay>30</delay>
+                    <history>7</history>
+                    <trends>90</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>bytes</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Traffic</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
                 </item>
             </items>
             <discovery_rules>
@@ -436,11 +606,14 @@
                     <snmp_oid>.1.3.6.1.2.1.2.2.1.2</snmp_oid>
                     <key>snmp.discovery</key>
                     <delay>120</delay>
-                    <status>0</status>
+                    <status>1</status>
                     <allowed_hosts/>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <delay_flex/>
                     <params/>
@@ -451,129 +624,14 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>:</filter>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
                     <lifetime>1</lifetime>
                     <description>Правило обнаружения сетевых интерфейсов</description>
                     <item_prototypes>
-                        <item_prototype>
-                            <name>Errors on port {#SNMPVALUE} (In)</name>
-                            <type>4</type>
-                            <snmp_community>{$COMMUNITY}</snmp_community>
-                            <multiplier>0</multiplier>
-                            <snmp_oid>.1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}</snmp_oid>
-                            <key>mikrotik.interface.errors.in.[&quot;{#SNMPINDEX}&quot;]</key>
-                            <delay>60</delay>
-                            <history>7</history>
-                            <trends>30</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>2</delta>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>Ошибки нв входящем потоке данных</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Health</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Errors on port {#SNMPVALUE} (Out)</name>
-                            <type>4</type>
-                            <snmp_community>{$COMMUNITY}</snmp_community>
-                            <multiplier>0</multiplier>
-                            <snmp_oid>.1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}</snmp_oid>
-                            <key>mikrotik.interface.errors.out.[&quot;{#SNMPINDEX}&quot;]</key>
-                            <delay>60</delay>
-                            <history>7</history>
-                            <trends>30</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>2</delta>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>Ошибки на исходящем потоке данных</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Health</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Link Up/Down status for Port {#SNMPVALUE}</name>
-                            <type>4</type>
-                            <snmp_community>{$COMMUNITY}</snmp_community>
-                            <multiplier>0</multiplier>
-                            <snmp_oid>.1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}</snmp_oid>
-                            <key>oper-status.[&quot;{#SNMPINDEX}&quot;]</key>
-                            <delay>30</delay>
-                            <history>7</history>
-                            <trends>30</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>0</delta>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>3</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>Состояние порта (подключено к нему устройство или нет)</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Status</name>
-                                </application>
-                            </applications>
-                            <valuemap>
-                                <name>SNMP interface status (ifOperStatus)</name>
-                            </valuemap>
-                        </item_prototype>
                         <item_prototype>
                             <name>On/Off state for Port {#SNMPVALUE}</name>
                             <type>4</type>
@@ -589,9 +647,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -614,6 +675,96 @@
                             <valuemap>
                                 <name>SNMP interface status (ifAdminStatus)</name>
                             </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Errors on port {#SNMPVALUE} (In)</name>
+                            <type>4</type>
+                            <snmp_community>{$COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}</snmp_oid>
+                            <key>mikrotik.interface.errors.in.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>60</delay>
+                            <history>7</history>
+                            <trends>30</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>2</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Ошибки нв входящем потоке данных</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Health</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Errors on port {#SNMPVALUE} (Out)</name>
+                            <type>4</type>
+                            <snmp_community>{$COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}</snmp_oid>
+                            <key>mikrotik.interface.errors.out.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>60</delay>
+                            <history>7</history>
+                            <trends>30</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>2</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Ошибки на исходящем потоке данных</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Health</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Port name for PORT number {#SNMPINDEX}</name>
@@ -624,15 +775,18 @@
                             <key>mikrotik.interface.name.[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>3600</delay>
                             <history>30</history>
-                            <trends>365</trends>
+                            <trends>0</trends>
                             <status>0</status>
                             <value_type>4</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -653,6 +807,8 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>PORT {#SNMPVALUE} packets IN</name>
@@ -669,9 +825,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>2</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -692,6 +851,8 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>PORT {#SNMPVALUE} packets OUT</name>
@@ -708,9 +869,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>2</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -731,6 +895,8 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Traffic {#SNMPVALUE} (In)</name>
@@ -747,9 +913,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>1</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -770,6 +939,8 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Traffic {#SNMPVALUE} (Out)</name>
@@ -786,9 +957,12 @@
                             <allowed_hosts/>
                             <units/>
                             <delta>1</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -809,35 +983,86 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Link Up/Down status for Port {#SNMPVALUE}</name>
+                            <type>4</type>
+                            <snmp_community>{$COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}</snmp_oid>
+                            <key>oper-status.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>30</delay>
+                            <history>7</history>
+                            <trends>30</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>3</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Состояние порта (подключено к нему устройство или нет)</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Status</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>SNMP interface status (ifOperStatus)</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template SNMP Mikrotik v. 1.0:mikrotik.interface.errors.in.[&quot;{#SNMPINDEX}&quot;].sum(600)}&gt;100 | {Template SNMP Mikrotik v. 1.0:mikrotik.interface.errors.out.[&quot;{#SNMPINDEX}&quot;].sum(600)}&gt;100</expression>
+                            <expression>{Template SNMP Mikrotik - fast:mikrotik.interface.errors.in.[&quot;{#SNMPINDEX}&quot;].sum(600)}&gt;100 or {Template SNMP Mikrotik - fast:mikrotik.interface.errors.out.[&quot;{#SNMPINDEX}&quot;].sum(600)}&gt;100</expression>
                             <name>Errors on port {#SNMPVALUE} (per 10 min)</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
                             <description>Поиск и выявление массового количества ошибок на порту</description>
                             <type>0</type>
+                            <dependencies/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template SNMP Mikrotik v. 1.0:mikrotik.interface.errors.in.[&quot;{#SNMPINDEX}&quot;].sum(3600)}&gt;1000 | {Template SNMP Mikrotik v. 1.0:mikrotik.interface.errors.out.[&quot;{#SNMPINDEX}&quot;].sum(3600)}&gt;1000</expression>
+                            <expression>{Template SNMP Mikrotik - fast:mikrotik.interface.errors.in.[&quot;{#SNMPINDEX}&quot;].sum(3600)}&gt;1000 or {Template SNMP Mikrotik - fast:mikrotik.interface.errors.out.[&quot;{#SNMPINDEX}&quot;].sum(3600)}&gt;1000</expression>
                             <name>Errors on port {#SNMPVALUE} (Per hour)</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
                             <description>Поиск и выявление массового количества ошибок на порту</description>
                             <type>0</type>
+                            <dependencies/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template SNMP Mikrotik v. 1.0:admin-status.[&quot;{#SNMPINDEX}&quot;].last(0)}=1 &amp; {Template SNMP Mikrotik v. 1.0:oper-status.[&quot;{#SNMPINDEX}&quot;].last(0)}=2</expression>
+                            <expression>{Template SNMP Mikrotik - fast:admin-status.[&quot;{#SNMPINDEX}&quot;].last(0)}=1 and {Template SNMP Mikrotik - fast:oper-status.[&quot;{#SNMPINDEX}&quot;].last(0)}=2</expression>
                             <name>Link status Port {#SNMPVALUE}</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
                             <description>Триггер срабатывает в том случае, если включенный интерфейс был отключен.</description>
                             <type>0</type>
+                            <dependencies/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes>
@@ -867,7 +1092,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.peckets.in.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -879,7 +1104,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.peckets.out.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -911,7 +1136,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.traffic.in.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -923,7 +1148,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.traffic.out.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -935,7 +1160,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.peckets.in.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -947,7 +1172,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.peckets.out.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -959,7 +1184,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.errors.in.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -971,7 +1196,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.errors.out.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -1003,7 +1228,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.traffic.in.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -1015,13 +1240,14 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Template SNMP Mikrotik v. 1.0</host>
+                                        <host>Template SNMP Mikrotik - fast</host>
                                         <key>mikrotik.interface.traffic.out.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
+                    <host_prototypes/>
                 </discovery_rule>
             </discovery_rules>
             <macros/>
@@ -1031,7 +1257,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template SNMP Mikrotik v. 1.0:mikrotik.cpu.load.avg(120)}&gt;80</expression>
+            <expression>{Template SNMP Mikrotik - fast:mikrotik.cpu.load.avg(120)}&gt;80</expression>
             <name>High CPU Utilization</name>
             <url/>
             <status>0</status>
@@ -1041,7 +1267,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Mikrotik v. 1.0:mikrotik.used.memory.avg(70)}&gt;52430000</expression>
+            <expression>{Template SNMP Mikrotik - fast:mikrotik.used.memory.avg(70)}&gt;52430000</expression>
             <name>Low free memory</name>
             <url/>
             <status>0</status>
@@ -1051,7 +1277,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Mikrotik v. 1.0:mikrotik.system.temperature.avg(60)}&gt;65</expression>
+            <expression>{Template SNMP Mikrotik - fast:mikrotik.system.temperature.avg(60)}&gt;65</expression>
             <name>Temperature Status High</name>
             <url/>
             <status>0</status>
@@ -1061,7 +1287,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Mikrotik v. 1.0:mikrotik.power.avg(60)}&gt;35</expression>
+            <expression>{Template SNMP Mikrotik - fast:mikrotik.power.avg(60)}&gt;35</expression>
             <name>Voltage Status</name>
             <url/>
             <status>0</status>
@@ -1098,8 +1324,40 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Mikrotik v. 1.0</host>
+                        <host>Template SNMP Mikrotik - fast</host>
                         <key>mikrotik.cpu.load</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>CPU Temperature</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>0</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>EE0000</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Mikrotik - fast</host>
+                        <key>mikrotik.processor.temperature</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1130,7 +1388,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Mikrotik v. 1.0</host>
+                        <host>Template SNMP Mikrotik - fast</host>
                         <key>mikrotik.cpu.load</key>
                     </item>
                 </graph_item>
@@ -1142,7 +1400,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Mikrotik v. 1.0</host>
+                        <host>Template SNMP Mikrotik - fast</host>
                         <key>mikrotik.system.temperature</key>
                     </item>
                 </graph_item>
@@ -1154,7 +1412,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Mikrotik v. 1.0</host>
+                        <host>Template SNMP Mikrotik - fast</host>
                         <key>mikrotik.power</key>
                     </item>
                 </graph_item>
@@ -1177,22 +1435,10 @@
             <ymax_type_1>2</ymax_type_1>
             <ymin_item_1>0</ymin_item_1>
             <ymax_item_1>
-                <host>Template SNMP Mikrotik v. 1.0</host>
+                <host>Template SNMP Mikrotik - fast</host>
                 <key>mikrotik.system.memory</key>
             </ymax_item_1>
             <graph_items>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>1</drawtype>
-                    <color>FF3333</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template SNMP Mikrotik v. 1.0</host>
-                        <key>mikrotik.used.memory</key>
-                    </item>
-                </graph_item>
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>1</drawtype>
@@ -1201,8 +1447,20 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Mikrotik v. 1.0</host>
+                        <host>Template SNMP Mikrotik - fast</host>
                         <key>mikrotik.system.memory</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>1</drawtype>
+                    <color>FF3333</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template SNMP Mikrotik - fast</host>
+                        <key>mikrotik.used.memory</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1233,7 +1491,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Mikrotik v. 1.0</host>
+                        <host>Template SNMP Mikrotik - fast</host>
                         <key>mikrotik.system.temperature</key>
                     </item>
                 </graph_item>
@@ -1265,11 +1523,63 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template SNMP Mikrotik v. 1.0</host>
+                        <host>Template SNMP Mikrotik - fast</host>
                         <key>mikrotik.power</key>
                     </item>
                 </graph_item>
             </graph_items>
         </graph>
     </graphs>
+    <value_maps>
+        <value_map>
+            <name>SNMP interface status (ifAdminStatus)</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>up</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>down</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>testing</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>SNMP interface status (ifOperStatus)</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>up</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>down</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>testing</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>unknown</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>dormant</newvalue>
+                </mapping>
+                <mapping>
+                    <value>6</value>
+                    <newvalue>notPresent</newvalue>
+                </mapping>
+                <mapping>
+                    <value>7</value>
+                    <newvalue>lowerLayerDown</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
 </zabbix_export>

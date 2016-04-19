@@ -1,0 +1,16 @@
+--- snmptrapper.c.orig	2016-02-26 14:41:57.673736849 +0200
++++ snmptrapper.c	2016-02-26 14:41:04.116781352 +0200
+@@ -35,10 +35,11 @@
+ static int	force = 0;
+ static int	overflow_warning = 0;
+ 
+-extern unsigned char	process_type, program_type;
+-extern int		server_num, process_num;
++static int	INT_MAX = 2147483647;
+ 
+ 
++extern unsigned char	process_type, program_type;
++extern int		server_num, process_num;
+ 
+ static void	DBget_lastsize()
+ {

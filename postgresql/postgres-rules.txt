@@ -13,9 +13,10 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO zabbix;
 # add to pg_hba.conf
  host    foo_db           zabbix          127.0.0.1/32              trust
 
-postgres=# CREATE EXTENSION pg_buffercache;
-postgres=# \dx pg_buffercache
-postgres=# GRANT EXECUTE ON FUNCTION public.pg_buffercache_pages() to zabbix;
+CREATE EXTENSION pg_buffercache;
+\dx pg_buffercache
+GRANT EXECUTE ON FUNCTION public.pg_buffercache_pages() to zabbix;
+GRANT SELECT ON pg_buffercache TO zabbix;
 
 check it:
 $zabbix_agentd -t pgsql.buffercache.total['-h 127.0.0.1 -p 5445 -U zabbix -d foo_db']
