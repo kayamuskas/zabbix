@@ -1,0 +1,6 @@
+https://habrahabr.ru/post/220073/
+
+https://github.com/lesovsky/zabbix-extensions/tree/master/files/iostat
+
+
+
