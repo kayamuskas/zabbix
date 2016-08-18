@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>2.0</version>
-    <date>2014-04-20T08:38:25Z</date>
+    <version>3.0</version>
+    <date>2016-08-18T08:49:13Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,9 @@
     </groups>
     <templates>
         <template>
-            <template>Iostat-Disk-Utilization-Template</template>
-            <name>Iostat-Disk-Utilization-Template</name>
+            <template>AAAAAATemplate iostat-Disk-Utilization</template>
+            <name>AAAAAATemplate iostat-Disk-Utilization</name>
+            <description/>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -18,12 +19,12 @@
             </groups>
             <applications>
                 <application>
-                    <name>Iostat</name>
+                    <name>iostat</name>
                 </application>
             </applications>
             <items>
                 <item>
-                    <name>Iostat: Collect statistics</name>
+                    <name>iostat: Collect statistics</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -59,10 +60,11 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Iostat</name>
+                            <name>iostat</name>
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
             </items>
             <discovery_rules>
@@ -91,7 +93,18 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>{#HARDDISK}:^(xvd|sd|hd|vd)[a-z]</filter>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#HARDDISK}</macro>
+                                <value>^(xvd|sd|hd|vd)[a-z]</value>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
                     <lifetime>1</lifetime>
                     <description/>
                     <item_prototypes>
@@ -132,10 +145,12 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Disk {#HARDDISK} average requests size</name>
@@ -174,10 +189,12 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Disk {#HARDDISK} await</name>
@@ -216,94 +233,12 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Disk {#HARDDISK} read await</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>iostat.metric[{#HARDDISK},r_await]</key>
-                            <delay>60</delay>
-                            <history>7</history>
-                            <trends>365</trends>
-                            <status>0</status>
-                            <value_type>0</value_type>
-                            <allowed_hosts/>
-                            <units>ms</units>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>The  average  time  (in  milliseconds) for read requests issued to the device to be served. This includes the time spent by the requests in queue and  the  time  spent servicing them.</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Iostat</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Disk {#HARDDISK} read from device per second</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>iostat.metric[{#HARDDISK},rkB/s]</key>
-                            <delay>60</delay>
-                            <history>7</history>
-                            <trends>365</trends>
-                            <status>0</status>
-                            <value_type>0</value_type>
-                            <allowed_hosts/>
-                            <units>kB/s</units>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>The number of kbytes read from the device per second</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Iostat</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Disk {#HARDDISK} read operations per second</name>
@@ -342,10 +277,56 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Disk {#HARDDISK} read from device per second</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>1</multiplier>
+                            <snmp_oid/>
+                            <key>iostat.metric[{#HARDDISK},rkB/s]</key>
+                            <delay>60</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>0</value_type>
+                            <allowed_hosts/>
+                            <units>B/s</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1024</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The number of kbytes read from the device per second</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>iostat</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Disk {#HARDDISK} read requests merge per second</name>
@@ -384,10 +365,56 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Disk {#HARDDISK} read await</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>iostat.metric[{#HARDDISK},r_await]</key>
+                            <delay>60</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>0</value_type>
+                            <allowed_hosts/>
+                            <units>ms</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The  average  time  (in  milliseconds) for read requests issued to the device to be served. This includes the time spent by the requests in queue and  the  time  spent servicing them.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>iostat</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Disk {#HARDDISK} utilization</name>
@@ -426,52 +453,12 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Disk {#HARDDISK} write await</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>iostat.metric[{#HARDDISK},w_await]</key>
-                            <delay>60</delay>
-                            <history>7</history>
-                            <trends>365</trends>
-                            <status>0</status>
-                            <value_type>0</value_type>
-                            <allowed_hosts/>
-                            <units>ms</units>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>The  average  time  (in milliseconds) for write requests issued to the device to be served. This includes the time spent by the requests in queue and  the  time  spent servicing them.</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Iostat</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Disk {#HARDDISK} write operations per second</name>
@@ -510,10 +497,56 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Disk {#HARDDISK} written to the device per second</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>1</multiplier>
+                            <snmp_oid/>
+                            <key>iostat.metric[{#HARDDISK},wkB/s]</key>
+                            <delay>60</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>0</value_type>
+                            <allowed_hosts/>
+                            <units>B/s</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1024</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The number of kilobytes written to the device per second.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>iostat</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
                             <name>Disk {#HARDDISK} write requests merge per second</name>
@@ -552,25 +585,27 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Disk {#HARDDISK} written to the device per second</name>
+                            <name>Disk {#HARDDISK} write await</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>iostat.metric[{#HARDDISK},wkB/s]</key>
+                            <key>iostat.metric[{#HARDDISK},w_await]</key>
                             <delay>60</delay>
                             <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts/>
-                            <units>kB/s</units>
+                            <units>ms</units>
                             <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
@@ -590,14 +625,16 @@
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>The number of kilobytes written to the device per second.</description>
+                            <description>The  average  time  (in milliseconds) for write requests issued to the device to be served. This includes the time spent by the requests in queue and  the  time  spent servicing them.</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Iostat</name>
+                                    <name>iostat</name>
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes/>
@@ -628,7 +665,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},await]</key>
                                     </item>
                                 </graph_item>
@@ -640,7 +677,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},r_await]</key>
                                     </item>
                                 </graph_item>
@@ -652,7 +689,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},w_await]</key>
                                     </item>
                                 </graph_item>
@@ -684,7 +721,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},rrqm/s]</key>
                                     </item>
                                 </graph_item>
@@ -696,7 +733,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},wrqm/s]</key>
                                     </item>
                                 </graph_item>
@@ -728,7 +765,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},avgqu-sz]</key>
                                     </item>
                                 </graph_item>
@@ -740,7 +777,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},avgrq-sz]</key>
                                     </item>
                                 </graph_item>
@@ -765,18 +802,6 @@
                             <ymax_item_1>0</ymax_item_1>
                             <graph_items>
                                 <graph_item>
-                                    <sortorder>1</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>CC0000</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
-                                        <key>iostat.metric[{#HARDDISK},wkB/s]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
                                     <sortorder>0</sortorder>
                                     <drawtype>0</drawtype>
                                     <color>0000CC</color>
@@ -784,8 +809,20 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},rkB/s]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>CC0000</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template iostat-Disk-Utilization</host>
+                                        <key>iostat.metric[{#HARDDISK},wkB/s]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -809,18 +846,6 @@
                             <ymax_item_1>0</ymax_item_1>
                             <graph_items>
                                 <graph_item>
-                                    <sortorder>2</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>0000C8</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
-                                        <key>iostat.metric[{#HARDDISK},w/s]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
                                     <sortorder>0</sortorder>
                                     <drawtype>1</drawtype>
                                     <color>C80000</color>
@@ -828,7 +853,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},util]</key>
                                     </item>
                                 </graph_item>
@@ -840,8 +865,20 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Iostat-Disk-Utilization-Template</host>
+                                        <host>Template iostat-Disk-Utilization</host>
                                         <key>iostat.metric[{#HARDDISK},r/s]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>0000C8</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template iostat-Disk-Utilization</host>
+                                        <key>iostat.metric[{#HARDDISK},w/s]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -857,8 +894,8 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Iostat-Disk-Utilization-Template:iostat.collect.last(0)}=1</expression>
-            <name>Iostat statistics not collected on {HOSTNAME}</name>
+            <expression>{Template iostat-Disk-Utilization:iostat.collect.last(0)}=1</expression>
+            <name>iostat statistics not collected on {HOSTNAME}</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
