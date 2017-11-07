@@ -306,16 +306,10 @@ char* dirname(char* path)
     while (( path[i-1] != 47 ) && ( i > 1 )) { i--; }
     if (( path[i-1] != 47 ) && ( i == 1 )) {
   #endif
-  #ifdef _OS_DOS
-    while (( path[i-1] != 92 ) && ( i > 1 )) { i--; }
-    if (( path[i-1] != 92 ) && ( i == 1 )) {
-  #endif
-     path = ".";
-     return path;
-  }
   path[i-1] = '\0';
   return path;
-}
+ }
+
 
 char* nondirname(char* path)
 {
