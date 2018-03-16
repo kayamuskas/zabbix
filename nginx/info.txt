@@ -1,0 +1,3 @@
+# https://share.zabbix.com/cat-app/web-servers/template-app-nginx-for-zabbix-3-4-x
+# TODO: test it
+
