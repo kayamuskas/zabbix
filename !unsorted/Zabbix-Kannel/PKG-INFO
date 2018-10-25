@@ -1,0 +1,36 @@
+Metadata-Version: 1.0
+Name: ZenPacks.oie.KannelMonitor
+Version: 3.0.0
+Summary: ZenPack to monitor Kannel SMPP Server stats
+Home-page: http://linux.last-bastion.net/LBN/up2date/monitor
+Author: Optus Internet Engineering
+Author-email: alan.milligan@optusnet.com.au
+License: ZPL/2.1
+Description: KannelMonitor
+        -------------
+        
+        KannelMonitor uses the nagios check-kannel plugin to retrieve input queue and
+        delivery volumes from any Kannel-based SMPP server.
+        
+        Once your Kannel Server has the check-kannel plugin installed, you can add Kannel monitoring
+        to the device within Zenoss by simply binding the KannelMonitor template to the device.
+        
+        1. Navigate to the device in the Zenoss web interface.
+        2. Click the device menu, choose More then Templates.
+        3. Click the templates menu, choose Bind Templates.
+        4. Ctrl-click the KannelMonitor template from /Devices/Server to choose it.
+        5. Click OK.
+        
+        You will now be collecting the Kannel Server metrics from this device.
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Framework :: Zope2
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Zope
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: System :: Networking :: Monitoring
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: Zope Public License
